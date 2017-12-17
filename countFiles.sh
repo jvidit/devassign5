@@ -2,12 +2,14 @@
 
 declare path
 read path
-cd path
+cd $path
+declare type
+read type
 declare -i count=0
 
 for i in *
 do
-	if [ "$i"=="^.pdf" ]
+	if [[ $i == *$type ]]
 	then
 		count=$count+1
 	fi
